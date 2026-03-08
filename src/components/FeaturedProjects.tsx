@@ -1,15 +1,17 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { projects, type Project } from "@/data/projects";
 import { ArrowRight } from "lucide-react";
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="group glass rounded-xl p-6 hover:glow-border transition-all duration-300"
-  >
+  <Link to={`/projet/${project.id}`}>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="group glass rounded-xl p-6 hover:glow-border transition-all duration-300 h-full"
+    >
     <div className="flex items-start justify-between mb-4">
       <div>
         <p className="font-mono text-xs text-primary uppercase tracking-wider mb-1">
@@ -57,7 +59,8 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         </span>
       ))}
     </div>
-  </motion.div>
+    </motion.div>
+  </Link>
 );
 
 const FeaturedProjects = () => {
