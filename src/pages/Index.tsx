@@ -1,12 +1,24 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import FeaturedProjects from "@/components/FeaturedProjects";
+import AllProjects from "@/components/AllProjects";
+import Skills from "@/components/Skills";
+import Experience from "@/components/Experience";
+import Contact from "@/components/Contact";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <Hero />
+      <FeaturedProjects />
+      <AllProjects />
+      <Skills />
+      <Experience />
+      <Contact />
+      <footer className="py-8 text-center text-xs text-muted-foreground border-t border-border">
+        <p>© 2026 Jaad CHOKR — Tous droits réservés</p>
+      </footer>
     </div>
   );
 };
